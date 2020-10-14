@@ -13,27 +13,26 @@
         placeholder="Full Name"
         type="text"
       />
+      {{ authForm.get("username").errors | json }}
       <input
         class="px-4 py-2 mb-4 text-base bg-white border border-gray-400 focus:outline-none focus:border-indigo-500"
         placeholder="Password"
         formControlName="password"
         type="password"
       />
+      {{ authForm.get("password").errors | json }}
       <input
         class="px-4 py-2 mb-4 text-base bg-white border border-gray-400 focus:outline-none focus:border-indigo-500"
         placeholder="Password confirmation"
         formControlName="passwordConfirmation"
         type="password"
       />
+      {{ authForm.get("passwordConfirmation").errors | json }}
       <button
         class="px-8 py-2 text-lg text-white bg-indigo-500 border-0 focus:outline-none hover:bg-indigo-600"
       >
-        Button
+        Sign Up
       </button>
-
-      <p class="mt-3 text-xs text-gray-500">
-        Already have an account? Sign in instead
-      </p>
     </form>
   </div>
 </section>
