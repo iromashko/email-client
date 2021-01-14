@@ -8,6 +8,8 @@ import { AuthService } from './auth/auth.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  email: string = '';
+
   signedIn$: BehaviorSubject<boolean>;
 
   constructor(private authService: AuthService) {
@@ -16,5 +18,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.checkAuth().subscribe();
+  }
+
+  onSubmit(): void {
+    console.log(this.email);
   }
 }
